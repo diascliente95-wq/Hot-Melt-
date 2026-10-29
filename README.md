@@ -24,12 +24,17 @@ A integração está preparada no painel **Configurações → Nuvem e acesso da
 ## Recursos
 - Painel com produção diária, perdas, índice de perdas, produção mensal e ocorrências.
 - Cadastro de produção por data, turno, produto, área, lote e funcionário.
+- Ocorrências classificadas por tipo e prioridade (baixa, média, alta ou crítica), com tempo de parada em minutos.
+- Relatórios com total de tempo parado, detalhes das ocorrências e exportação desses campos no CSV.
+- Auditoria de estoque: produção adicionada ao saldo e ajustes manuais passam a aparecer no histórico de movimentações.
 - Estoque de caixas e tampas, pallets e movimentações de entrada/saída.
 - Histórico com filtros, relatórios, CSV, impressão/PDF e texto para WhatsApp.
 - Backup e restauração JSON.
 - Cadastro local de funcionários e sincronização compartilhada via Firebase após configuração.
 
 ## Limites e cuidados
+- A nuvem Firebase precisa ser configurada e as regras de acesso precisam ser publicadas pelo responsável do projeto. O sistema não ativa a nuvem sozinho.
+- A sincronização atual compartilha um único documento no Firestore; para várias pessoas editarem ao mesmo tempo, ainda é necessário testar o fluxo e considerar registros separados por lançamento para evitar conflitos.
 - Sem Firebase configurado e autorizado, os dados ficam apenas no armazenamento local do aparelho. Limpar dados do navegador pode apagá-los.
 - Excluir um lançamento de produção não reverte o estoque automaticamente; confira o saldo após exclusões.
 - Se vários funcionários editarem simultaneamente, esta versão sincroniza o documento compartilhado inteiro; faça backup frequente e valide o fluxo antes do uso operacional.
