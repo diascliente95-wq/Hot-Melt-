@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Troque os e-mails abaixo pelos e-mails reais autorizados da equipe.
+    // Não use uma regra aberta para todos os usuários autenticados em produção.
+    match /hotmelt/shared {
+      allow read, write: if request.auth != null
+        && request.auth.token.email in [
+          'admin@empresa.com',
+          'operador@empresa.com'
+        ];
+    }
+  }
+}
