@@ -9,7 +9,7 @@ Aplicação responsiva/PWA para registrar produção de caixas e tampas por data
 4. O service worker usa cache versionado; a nova versão pode levar alguns instantes para aparecer. Feche e reabra o app se necessário.
 
 ## Nuvem e equipe com Firebase
-A integração está preparada no painel **Configurações → Nuvem e acesso da equipe**. Para ativá-la:
+A integração está preparada no painel **Configurações → Nuvem e acesso da equipe**, com os dados públicos de configuração do projeto `hot-melt-2027` já preenchidos. Para ativá-la:
 
 1. Crie/abra um projeto no [Firebase Console](https://console.firebase.google.com/).
 2. Adicione um app Web e copie os campos `apiKey`, `authDomain`, `projectId` e `appId` para o painel Hot-Melt.
